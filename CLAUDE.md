@@ -48,6 +48,8 @@ Inspired by Carmack's .plan files and Franklin's systematic self-improvement.
 ~/Documents/YOURNAME/reference/values.md            # Core principles
 ~/Documents/YOURNAME/inbox.md                       # Quick capture
 ~/Documents/YOURNAME/decisions/                     # Decision records
+~/Documents/YOURNAME/people/                        # Notes on people (use templates/person.md)
+~/Documents/YOURNAME/research/                      # Research docs (use templates/research.md)
 ~/Documents/YOURNAME/templates/                     # Templates
 ```
 
@@ -67,6 +69,15 @@ When I say "morning" or "let's plan the day":
 4. Ask Franklin's morning question: "What good shall I do this day?"
 5. Challenge my priorities — do they connect to annual goals? Am I avoiding something important?
 6. Carry forward any uncompleted tasks from yesterday
+
+### Wiki-Links
+
+Files use `[[wiki-links]]` to cross-reference each other. When you encounter `[[some-name]]`, resolve it by searching for `some-name.md` across these directories (in order): `people/`, `research/`, `decisions/`, `journal/`, `reference/`. Use Glob to find the file, then read it for context.
+
+When creating or editing files, add wiki-links to connect related content:
+- Journal entries should link to people mentioned: `Met with [[jane-smith]]`
+- Decision docs should link to relevant research: `See [[market-analysis]]`
+- Research docs should link to people: `Led by [[jane-smith]]`
 
 ### During the Day
 

@@ -14,6 +14,8 @@ A plain-text system for life planning, daily journaling, decision-making, and ta
 - **Decision records** — Structured docs for important decisions so you can trace your reasoning later
 - **Inbox** — Quick capture for tasks, ideas, and things to process later
 - **Values & habits** — Your principles and daily routines, written down so Claude can hold you to them
+- **People** — Notes on people you're meeting, working with, or researching
+- **Research** — Deep dives on any topic — companies, technologies, markets, ideas
 
 ## Setup
 
@@ -71,7 +73,7 @@ Copy the starter files to wherever you want your life system to live. The defaul
 
 ```bash
 # Copy starter files
-cp -r plan.md journal/ reference/ decisions/ templates/ inbox.md ~/Documents/yourname/
+cp -r plan.md journal/ reference/ decisions/ people/ research/ templates/ inbox.md ~/Documents/yourname/
 ```
 
 Update the paths in your `CLAUDE.md` to match wherever you put these.
@@ -109,6 +111,8 @@ Open Claude Code in your life directory. Say "morning" or "let's plan today." Cl
 - **Auto-logging**: Claude adds timestamped entries to your journal as you work together
 - **Inbox capture**: Quick tasks and ideas go to `inbox.md` for processing later
 - **Decision records**: When facing a significant decision, Claude helps you think through it and creates a decision doc in `decisions/`
+- **People notes**: Ask Claude to research someone before a meeting — it saves structured notes in `people/`
+- **Research**: Ask Claude to do a deep dive on any topic — it compiles findings into `research/` with sources
 
 ### Evening
 - Franklin's question: "What good have I done today?"
@@ -119,6 +123,19 @@ Open Claude Code in your life directory. Say "morning" or "let's plan today." Cl
 The system works because Claude reads your plan, goals, and values before every session. It holds you accountable to what you said matters. When your daily actions drift from your annual goals, it names it. When your goals drift from your life plan, it names that too.
 
 The files are the source of truth. Claude is the accountability partner who never forgets what you wrote.
+
+## Wiki-Links
+
+Files can reference each other using `[[wiki-links]]`. For example, a journal entry might say `Met with [[jane-smith]] about the project` — and Claude will resolve that by finding `people/jane-smith.md` and pulling in context.
+
+This works because CLAUDE.md includes a convention telling Claude to search `people/`, `research/`, `decisions/`, and `journal/` when it encounters a `[[link]]`. No special editor required — the links are just a convention that Claude understands.
+
+Use them to connect:
+- **Journal entries** to **people**: `Had coffee with [[jane-smith]]`
+- **Decisions** to **research**: `Based on [[market-analysis]]`
+- **Research** to **people**: `Led by [[jane-smith]]`
+
+Note: These won't render as clickable links in most markdown editors (GitHub, iA Writer, VS Code). They're a convention for Claude and for your own readability. If you use [Obsidian](https://obsidian.md), they'll resolve natively.
 
 ## Customizing
 
