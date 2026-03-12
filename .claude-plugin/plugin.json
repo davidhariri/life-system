@@ -1,0 +1,8 @@
+{
+  "name": "ls",
+  "version": "1.0.0",
+  "description": "Personal life operating system — journaling, planning, decisions, and accountability. Inspired by Carmack's .plan files and Franklin's systematic self-improvement.",
+  "keywords": ["journaling", "planning", "productivity", "life-system"],
+  "skills": "./skills/",
+  "hooks": "./hooks/hooks.json"
+}

@@ -2,22 +2,24 @@
 
 ## File Locations
 
+All paths are relative to the user's configured `base_dir` (read from `~/.config/life-system/config.json`):
+
 ```
-~/Documents/YOURNAME/plan.md                        # 10-year life vision
-~/Documents/YOURNAME/journal/YYYY/goals.md          # Annual goals
-~/Documents/YOURNAME/journal/YYYY/MM/YYYY-MM-DD.md  # Daily entries
-~/Documents/YOURNAME/journal/YYYY/MM/week-WW.md     # Weekly reviews (optional)
-~/Documents/YOURNAME/reference/values.md            # Core principles
-~/Documents/YOURNAME/inbox.md                       # Quick capture
-~/Documents/YOURNAME/decisions/                     # Decision records
-~/Documents/YOURNAME/templates/                     # Templates
+<base_dir>/plan.md                        # 10-year life vision
+<base_dir>/journal/YYYY/goals.md          # Annual goals
+<base_dir>/journal/YYYY/MM/YYYY-MM-DD.md  # Daily entries
+<base_dir>/journal/YYYY/MM/week-WW.md     # Weekly reviews (optional)
+<base_dir>/reference/values.md            # Core principles
+<base_dir>/inbox.md                       # Quick capture
+<base_dir>/decisions/                     # Decision records
+<base_dir>/templates/                     # Templates
 ```
 
 ## Task Management (Plain Text)
 
 All tasks are managed in plain text:
 
-- **Personal backlog / quick capture:** `~/Documents/YOURNAME/inbox.md`
+- **Personal backlog / quick capture:** `<base_dir>/inbox.md`
 - **Project tasks:** `plan.md` in each project's repo root
 - **Daily to-dos:** In the morning section of the daily journal
 

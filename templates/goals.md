@@ -1,4 +1,4 @@
-# 2026
+# {{YEAR}}
 
 **[Theme]** — One phrase that captures the year's focus.
 

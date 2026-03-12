@@ -13,16 +13,30 @@ This skill ensures daily activities ladder up to annual goals, which ladder up t
 
 ---
 
+## Step 0: Load Config
+
+Read `~/.config/life-system/config.json` to get the user's base directory.
+
+```json
+{ "base_dir": "/path/to/life-system" }
+```
+
+If the config file doesn't exist, tell the user to run `/ls:setup` first and stop.
+
+All paths below use `BASE_DIR` from this config. For example, if base_dir is `/home/alice/Documents/life-system`, then the journal path is `/home/alice/Documents/life-system/journal/YYYY/MM/YYYY-MM-DD.md`.
+
+---
+
 ## Step 1: Load Context
 
 Read these files in parallel — don't summarize them yet, just load them:
 
-1. **Yesterday's journal:** `~/Documents/YOURNAME/journal/YYYY/MM/YYYY-MM-DD.md` (calculate yesterday's date). If it doesn't exist, look back up to 7 days for the most recent entry.
+1. **Yesterday's journal:** `<BASE_DIR>/journal/YYYY/MM/YYYY-MM-DD.md` (calculate yesterday's date). If it doesn't exist, look back up to 7 days for the most recent entry.
 2. **Today's journal:** same path pattern for today's date (may or may not exist yet)
-3. **Annual goals:** `~/Documents/YOURNAME/journal/YYYY/goals.md`
-4. **Life plan:** `~/Documents/YOURNAME/plan.md`
-5. **Inbox:** `~/Documents/YOURNAME/inbox.md`
-6. **Active decisions:** Scan `~/Documents/YOURNAME/decisions/` for any decision documents with status "Open" or "Active". Read the most recent or most relevant ones.
+3. **Annual goals:** `<BASE_DIR>/journal/YYYY/goals.md`
+4. **Life plan:** `<BASE_DIR>/plan.md`
+5. **Inbox:** `<BASE_DIR>/inbox.md`
+6. **Active decisions:** Scan `<BASE_DIR>/decisions/` for any decision documents with status "Open" or "Active". Read the most recent or most relevant ones.
 
 ---
 
@@ -46,13 +60,13 @@ Let them talk. Ask follow-up questions. Push back if something sounds like narra
 
 ## Step 3: Review Today's To-Dos
 
-Read today's journal file (or create one from the template if it doesn't exist).
+Read today's journal file (or create one from the template at `<BASE_DIR>/templates/daily-journal.md` if it doesn't exist).
 
 **Clean it up:**
 - Remove stale carried-over items that are no longer relevant
 - Update Active Projects and Active Decisions to reflect current state
 
-**Check inbox** (`~/Documents/YOURNAME/inbox.md`) for items that should be promoted to today.
+**Check inbox** (`<BASE_DIR>/inbox.md`) for items that should be promoted to today.
 
 Present the landscape: carried-over to-dos and any inbox items worth surfacing.
 
@@ -127,7 +141,7 @@ Before finishing, do a final check:
 
 - **Is the plan too ambitious?** If there are more than 3-4 key outcomes, push back. "That's a lot for one day. What's the one thing that matters most?"
 - **Is something being avoided?** If a hard task keeps not making the list, name it.
-- **Any actions for inbox?** If the conversation produced tasks that aren't for today, add them to `~/Documents/YOURNAME/inbox.md`.
+- **Any actions for inbox?** If the conversation produced tasks that aren't for today, add them to `<BASE_DIR>/inbox.md`.
 
 End with a brief, direct summary of the 1-3 things that matter most today.
 
@@ -142,23 +156,3 @@ When something is logged or asked to be added to the journal:
 When something log-worthy comes up in conversation:
 - Add it to today's journal and say "Added to log: [brief summary]"
 - No need to ask permission — keep the conversation flowing
-
----
-
-## Evening (if invoked)
-
-- Read today's journal file
-- Summarize what was accomplished vs. the morning focus
-- Prompt with Franklin's closing question: "What good have I done today?"
-- Append an evening reflection section
-- Carry forward anything that didn't get done (note it for tomorrow)
-
----
-
-## Weekly Review (if invoked)
-
-- Read the week's journal entries
-- Summarize the week: what got done, what didn't, patterns
-- Check annual goals progress — which goals moved forward this week?
-- Name what's being avoided
-- Identify 1-3 priorities for next week

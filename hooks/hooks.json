@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Check if ~/.config/life-system/config.json exists by reading it. If it exists, silently note the base_dir for this session. If it does NOT exist, inform the user: 'Life System plugin is installed but not configured. Run /ls:setup to choose your journal directory and get started.'"
+          }
+        ]
+      }
+    ]
+  }
+}
